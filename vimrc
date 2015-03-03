@@ -44,6 +44,9 @@ set wildignore=log/**,node_modules/**,target/**,tmp/**,*.rbc
 set wildmenu                                                 " show a navigable menu for tab completion
 set wildmode=longest,list,full
 
+set background=light
+colorscheme solarized
+
 " Enable basic mouse behavior such as resizing buffers.
 set mouse=a
 if exists('$TMUX')  " Support resizing in tmux
@@ -93,19 +96,8 @@ endif
 autocmd BufRead,BufNewFile *.fdoc set filetype=yaml
 " md is markdown
 autocmd BufRead,BufNewFile *.md set filetype=markdown
-" extra rails.vim help
-autocmd User Rails silent! Rnavcommand decorator      app/decorators            -glob=**/* -suffix=_decorator.rb
-autocmd User Rails silent! Rnavcommand observer       app/observers             -glob=**/* -suffix=_observer.rb
-autocmd User Rails silent! Rnavcommand feature        features                  -glob=**/* -suffix=.feature
-autocmd User Rails silent! Rnavcommand job            app/jobs                  -glob=**/* -suffix=_job.rb
-autocmd User Rails silent! Rnavcommand mediator       app/mediators             -glob=**/* -suffix=_mediator.rb
-autocmd User Rails silent! Rnavcommand stepdefinition features/step_definitions -glob=**/* -suffix=_steps.rb
 " automatically rebalance windows on vim resize
 autocmd VimResized * :wincmd =
-
-" Set various file types to PHP (Drupal specific)
-au BufReadPost *.install set syntax=php
-au BufReadPost *.module set syntax=php
 
 " Fix Cursor in TMUX
 if exists('$TMUX')
