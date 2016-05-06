@@ -1,3 +1,3 @@
 #!/bin/bash
 
-brew install tmux vim reattach-to-user-namespace
+brew install tmux vim ack reattach-to-user-namespace

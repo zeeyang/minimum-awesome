@@ -1,7 +1,9 @@
 " don't bother with vi compatibility
 set nocompatible
 
-let g:nerdtree_tabs_open_on_console_startup=1
+let g:nerdtree_tabs_open_on_console_startup=0
+let g:syntastic_javascript_checkers = ['eslint']
+let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 
 " configure Vundle
 filetype on " without this vim emits a zero exit status, later, because of :ft off
@@ -35,11 +37,11 @@ set listchars=tab:▸\ ,trail:▫
 set number                                                   " show line numbers
 set ruler                                                    " show where you are
 set scrolloff=3                                              " show context above/below cursorline
-set shiftwidth=2                                             " normal mode indentation commands use 2 spaces
+set shiftwidth=4                                             " normal mode indentation commands use 4 spaces
 set showcmd
 set smartcase                                                " case-sensitive search if any caps
-set softtabstop=2                                            " insert mode tab and backspace use 2 spaces
-set tabstop=8                                                " actual tabs occupy 8 characters
+set softtabstop=4                                            " insert mode tab and backspace use 4 spaces
+set tabstop=4                                                " actual tabs occupy 8 characters
 set wildignore=log/**,node_modules/**,target/**,tmp/**,*.rbc
 set wildmenu                                                 " show a navigable menu for tab completion
 set wildmode=longest,list,full
@@ -129,5 +131,5 @@ fun! <SID>StripTrailingWhitespaces()
   %s/\s\+$//e
   call cursor(l, c)
 endfun
-autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+" autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
