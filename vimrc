@@ -31,6 +31,7 @@ set encoding=utf-8
 set expandtab                                                " expand tabs to spaces
 set ignorecase                                               " case-insensitive search
 set incsearch                                                " search as you type
+set hlsearch
 set laststatus=2                                             " always show statusline
 set list                                                     " show trailing whitespace
 set listchars=tab:▸\ ,trail:▫
@@ -77,6 +78,7 @@ map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimr
 vmap <C-x> :!pbcopy<CR>
 vmap <C-c> :w !pbcopy<CR><CR>
 map <leader>r :NERDTreeFind<cr>
+nnoremap <esc><esc> :noh<return>
 
 " plugin settings
 let g:ctrlp_match_window = 'order:ttb,max:20'
